@@ -1,0 +1,8 @@
+{
+  "name": "daily-lex",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-10-15",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
