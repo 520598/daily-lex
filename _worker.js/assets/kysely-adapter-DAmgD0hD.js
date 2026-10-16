@@ -1,1 +1,0 @@
-export{t as createKyselyAdapter,a as kyselyAdapter}from"./dist-CNDor0Pj.js";
