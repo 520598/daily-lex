@@ -1,6 +1,6 @@
 {
   "name": "daily-lex-pages",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "build": "node -e \"for(const p of ['index.html','assets','articles/index.json','dictionary.json'])if(!require('node:fs').existsSync(p))throw new Error('Missing '+p);console.log('DailyLex prebuilt assets ready')\""
