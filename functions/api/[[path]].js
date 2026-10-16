@@ -4,7 +4,7 @@ async function onRequest({ request, env }) {
 	if (!incoming.pathname.startsWith("/api/")) return new Response(null, { status: 404 });
 	let origin;
 	try {
-		origin = new URL(env?.DAILYLEX_API_ORIGIN || "https://daily-lex-api.vercel.app");
+		origin = new URL(env?.DAILYLEX_API_ORIGIN || "https://dailylexapi.wudi.zone");
 		if (origin.protocol !== "https:" || origin.username || origin.password || origin.origin === incoming.origin) throw new Error("Invalid API origin");
 	} catch {
 		return new Response(JSON.stringify({ error: "账号服务尚未配置" }), {
