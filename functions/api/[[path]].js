@@ -27,6 +27,7 @@ async function onRequest({ request, env }) {
 		"x-forwarded-for",
 		"forwarded"
 	]) headers.delete(name);
+	headers.set("Accept-Encoding", "identity");
 	try {
 		const response = await fetch(origin.href, {
 			method: request.method,
@@ -35,6 +36,11 @@ async function onRequest({ request, env }) {
 			redirect: "manual"
 		});
 		const outgoing = new Headers(response.headers);
+		for (const name of [
+			"Content-Encoding",
+			"Content-Length",
+			"Transfer-Encoding"
+		]) outgoing.delete(name);
 		outgoing.set("Cache-Control", "no-store");
 		return new Response(response.body, {
 			status: response.status,
